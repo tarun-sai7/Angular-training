@@ -1,0 +1,32 @@
+<div class="p-5">
+  <h1>Data Binding</h1>
+  <div>
+    <h3 style="color: blueviolet;">Interpolation Binding</h3>
+    <p>The Stream name is :{{stream}}</p>
+  </div>
+  <div>
+    <h3 style="color: blueviolet;">Property Binding</h3>
+    <h4 [align]="myalign">Text is right Aligned  </h4>
+    <h4 style="text-align: center;">PLAIN HTML</h4>
+  </div>
+  <div>
+    <h3 style="color: blueviolet;"> Event Binding</h3>
+    <button (click)="Clickme()" class="btn btn-primary"> Click Me </button>
+  </div>
+  <div>
+    <h3 style="color: blueviolet;"> Two way Binding</h3>
+    Enter Name:
+    <input type="text" placeholder="Enter Username" [(ngModel)]="username"/>
+    <p>Logged in as {{username}}</p>
+  </div>
+
+</div>
+<div>
+    <h3>Switch case </h3>
+    <ul [ngSwitch]="selectedvalue">
+      <li *ngSwitchCase="'one'">First</li>
+      <li *ngSwitchCase="'two'">Two</li>
+      <li *ngSwitchDefault>Default</li>
+    </ul>
+</div>
+

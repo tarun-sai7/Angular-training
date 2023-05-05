@@ -1,0 +1,39 @@
+<div class="p-5">
+    <h1>Courses Content</h1>
+    <h3>The Courses content are</h3>
+    <table class = 'table table-hover table-striped '>
+        <thead class="">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Duration</th>
+            <th>SME</th>
+        </thead>
+        <tbody>
+           <!--  <tr>
+                <td>101</td>
+                <td>Angular</td>
+                <td>40</td>
+                <td>Shipra</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Python</td>
+                <td>30</td>
+                <td>Sheetal</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Typescript</td>
+                <td>20</td>
+                <td>Soumya</td>
+            </tr> -->
+            <tr *ngFor="let course of courses">
+                <td><a [routerLink]="['/course',course.cid]" routerLinkActive="router-link-active" >{{course.cid}}</a></td>
+                <td>{{course.cname}}</td>
+                <td>{{course.cduration}}</td>
+                <td>{{course.csme}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<router-outlet></router-outlet>

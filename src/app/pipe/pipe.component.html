@@ -1,0 +1,15 @@
+<h1>Pipes Component</h1>
+
+<h3>Upper case pipe:</h3>
+
+Username : {{username|uppercase | custom:gender}}
+<h3>Lower case pipe:</h3>
+ Address : {{address|lowercase}}
+<h3> Slice pipe:</h3>
+Hobbies : {{hobbies|slice:1:4}}
+
+<h3> Date pipe:</h3>
+DOj : {{doj|date:'short'}}
+
+<h3>Currency pipe:</h3>
+Salary {{salary|currency:'INR'}}

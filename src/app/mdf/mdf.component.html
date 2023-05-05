@@ -1,0 +1,26 @@
+<div  class="float-center"> 
+   <h1>MODEL DRIVEN FORM </h1>   
+  <div style="background-color:aliceblue ; width: 500px;height: 520px;;font-size:15px;">
+  <form [formGroup] = 'loginForm' (ngSubmit) ='login(loginForm.value)'>       
+    <label>Enter username: </label>       
+    <input type="text" formControlName="uname"/>       
+    <br/>      
+    <div *ngIf="loginForm.controls['uname'].hasError('required')" style="color: red;">       
+      Username cannot be left blank.......   
+    </div>       
+    <label>Enter password: </label>       
+    <input type="password" formControlName="pwd"/>       
+     <br/>      
+     <div *ngIf="loginForm.controls['pwd'].hasError('required')" style="color: red;">       
+      Password cannot be left blank.......    </div>     
+       <div formGroupName="Security">       
+         <label>Enter Captcha: </label>       
+         <input type="text" formControlName="captcha"/>       
+         <br/>        <label>Enter OTP: </label>       
+         <input type="text" formControlName="otp"/>       
+         <br/>       
+         <button class="btn btn-success formsubmit" [disabled]="!loginForm.valid">Submit</button>   
+        </div>   
+      </form>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div >
+<div  style="background-color:aliceblue ; width: 500px;height: 520px;;font-size:15px;">
+  <h1>Template Driven Form</h1>
+  <form #loginform='ngForm' (ngSubmit)="login(loginform.value)">
+    <label>Enter Username:</label>
+    <input type="text" name="username" #uname="ngModel" required ngModel>
+    <br/>
+    <div [hidden]="uname.valid || uname.pristine" style="color: tomato;">
+      <a>Username cannot be empty</a>
+    </div>
+    <label>Enter Password:</label>
+    <input class='' type="password" name="Password" #pwd="ngModel" required ngModel>
+    <br/>
+    <div [hidden]="pwd.valid || pwd.dirty" style="color: tomato;">
+      <a>Password cannot be empty</a>
+    </div>
+    <div ngModelGroup="security" >   
+      <h5 class="float-left" >Security Details </h5>  
+      <label>Enter Captcha: </label>       
+      <input type="text" name="captcha" ngModel/>       
+      <label>Enter OTP: </label>       
+      <input type="text" name="otp" ngModel/>   
+    </div>   
+    <button [disabled]="uname.pristine || pwd.invalid" class="btn btn-success">Submit</button>
+
+  </form>
+</div>
+</div>
